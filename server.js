@@ -23,7 +23,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: (origin, callback) => {
-      const allowedOrigins = ["http://localhost:5173", "http://localhost:5174"];
+      const allowedOrigins = [
+        "https://food-delivery-app-client.vercel.app",
+        "http://localhost:5174",
+      ];
 
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
