@@ -26,6 +26,7 @@ app.use(
       const allowedOrigins = [
         "https://food-delivery-app-client.vercel.app",
         "http://localhost:5174",
+        "https://food-delivery-app-client-yq3v-2ge9yayhi.vercel.app",
       ];
 
       if (!origin || allowedOrigins.includes(origin)) {
