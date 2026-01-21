@@ -23,22 +23,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: (origin, callback) => {
-      const allowedOrigins = [
-        "http://localhost:5174",
+      if (!origin) return callback(null, true);
 
-        "https://food-delivery-app-client-yq3v-2ge9yayhi.vercel.app",
-        "https://food-delivery-app-admin-nu.vercel.app",
-      ];
-
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by Cors"));
+      if (origin.endsWith(".vercel.app")) {
+        return callback(null, true);
       }
+
+      return callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
   }),
 );
+
 connectDB();
 
 app.get("/", (req, res) => {
