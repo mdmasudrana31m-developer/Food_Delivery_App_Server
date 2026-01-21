@@ -24,11 +24,12 @@ app.use(
   cors({
     origin: (origin, callback) => {
       const allowedOrigins = [
-        "https://food-delivery-app-admin-nu.vercel.app/",
+        "https://food-delivery-app-admin-nu.vercel.app",
         "https://food-delivery-app-client-yq3v-2ge9yayhi.vercel.app",
         "http://localhost:5174",
         "http://localhost:5174",
         "https://food-delivery-app-admin-nu.vercel.app/",
+        "https://food-delivery-app-admin-qrjxm108b.vercel.app",
       ];
 
       if (!origin || allowedOrigins.includes(origin)) {
